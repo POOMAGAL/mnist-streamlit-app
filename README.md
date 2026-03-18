@@ -10,3 +10,5 @@ This app uses TensorFlow to classify handwritten digits.
 ## Run locally
 streamlit run app.py# mnist-streamlit-app
 # mnist-streamlit-app
+https://mnist-app-app.streamlit.app/
+
