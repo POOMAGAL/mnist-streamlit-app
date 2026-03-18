@@ -3,3 +3,4 @@ tensorflow==2.15.0
 numpy
 pillow
 streamlit-drawable-canvas
+keras==2.15.0

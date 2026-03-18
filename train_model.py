@@ -25,5 +25,14 @@ model.compile(
 # Train
 model.fit(x_train, y_train, epochs=5)
 
-# Save model
-model.save("model.keras")
+# # Save model
+# model.save("model.kera")
+
+import tensorflow as tf
+
+# Load your existing model
+model = tf.keras.models.load_model("model.keras")
+
+# Re-save in HDF5 format (compatible)
+model.save("model_fixed.h5", save_format="h5")
+model.save_weights("weights.h5")

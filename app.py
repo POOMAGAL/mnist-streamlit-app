@@ -10,11 +10,26 @@ st.title("🧠 Handwritten Digit Recognizer")
 st.write("Draw a digit (0–9) below 👇")
 
 # Load model
+# @st.cache_resource
+# def load_model():
+#     return tf.keras.models.load_model("model.h5")
+def build_model():
+    model = tf.keras.Sequential([
+        tf.keras.layers.Flatten(input_shape=(28,28)),
+        tf.keras.layers.Dense(128, activation='relu'),
+        tf.keras.layers.Dense(10, activation='softmax')
+    ])
+    return model
+
+model = build_model()
+model.load_weights("weights.h5")
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("model.keras")
+    return tf.keras.models.load_model("model_fixed.h5", compile=False)
 
 model = load_model()
+
+
 
 # Canvas
 canvas_result = st_canvas(
